@@ -1,0 +1,37 @@
+/* navbar smart-scroll settings */
+.smart-scroll{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+
+/* navbar authenticated dropdown-menu theming */
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #1C2331;
+    color: #2196f3 !important;
+}
+
+/* not sure */
+.top-nav-collapse {
+background-color: #1C2331;
+}
+
+@media (max-width: 768px) {
+.navbar:not(.top-nav-collapse) {
+    background-color: #1C2331;
+}
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+.navbar:not(.top-nav-collapse) {
+    background-color: #1C2331;
+}
+}

@@ -1,0 +1,35 @@
+# Specify Docker Compose version
+version: '3.8'
+
+# Specify services (containers) to run within Docker host
+services:
+    # Service/Container 1 - Web
+    web:
+        # Look in current directory '.' for the Dockerfile
+        build: .
+        # Run command to start up Django server
+        command: python /code/manage.py runserver 0.0.0.0:8000
+        # Volumes mount automatically syncs the Docker filesystem with local (host) filesystem
+        # Means don't need to rebuild the image each time we change a file(s)
+        volumes:
+            - .:/code
+        # Specify ports to expose in Docker, here Django default
+        ports:
+            - 8000:8000
+        # Set web service to depend on below db service
+        # Means db will be started up before web
+        depends_on:
+            - db
+    # Service/Container 2 - Postgres DB
+    db:
+        # Pin version 14
+        image: postgres:14
+        # Dedicated volume for postgres
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        # Allow connection to db without password, convenience for local dev
+        environment:
+            - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+volumes:
+    postgres_data:

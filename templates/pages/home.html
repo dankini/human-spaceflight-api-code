@@ -1,0 +1,118 @@
+<!-- templates/pages/home.html -->
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+<title>
+    {% block title %}
+      {% trans 'Home | Human Spaceflight API' %}
+    {% endblock title %}
+</title>
+<!-- /.Tab title -->
+
+<!-- CSS -->
+{% block extra_css %}
+<!-- Local extra CSS -->
+<link
+    href="{% static 'pages/css/home.css' %}"
+    rel="stylesheet"
+/>
+{% endblock extra_css %}
+<!-- /.CSS -->
+
+<!-- Main Page content -->
+{% block page_content %}
+<main>
+    <!-- Section: Banner one -->
+    <!-- Background image -->
+    <section id="banner-one"
+            class="view"
+            style="background-image: url('{% static 'pages/images/home_banner_1.jpg' %}')">
+        <!-- Mask -->
+        <div class="mask rgba-black-light">
+            <!-- Content -->
+            <div class="container-fluid d-flex align-items-center justify-content-center">
+                <!-- Grid row -->
+                <div class="row d-flex align-items-center justify-content-center text-center">
+                    <!-- Grid column -->
+                    <div class="col pt-5 mt-5">
+                        <!-- Heading -->
+                        <h2 class="h3-responsive white-text pt-5 mt-5 mb-4 mx-5">Human spaceflight data</h2>
+                        <!-- /.Heading -->
+                        <!-- Divider -->
+                        <hr class="hr-light mx-5">
+                        <!-- /.Divider -->
+                        <!-- Description -->
+                        <h1 class="h5-responsive white-text my-4 mx-6">From the first solo mission into space to the last crewed lunar landing</h1>
+                        <h1 class="h5-responsive white-text my-4 mx-6">Apr 1961 - Dec 1972</h1>
+                        <!-- /.Description -->
+                    </div>
+                    <!-- /.Grid column -->
+                </div>
+                <!-- /.Grid row -->
+            </div>
+            <!-- /.Content -->
+        </div>
+        <!-- /.Mask -->
+    </section>
+    <!-- /.Background image -->
+    <!-- /.Section: Banner one -->
+
+    <!-- Section: API info -->
+    <section id="api_info" class="container text-center mt-5 mb-3">
+        <!-- Grid row 1 -->
+        <div class="row text-center">
+            <!-- Grid column 1.1 -->
+            <div class="col-md-3 mb-4">
+                <!--span style="color: darkorange;"-->
+                    <i class="fas fa-user-astronaut fa-6x blue-text"></i>
+                <!--/span-->
+                <h4 class="my-4 font-weight-bold">Astronauts</h4>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam, aperiam minima assumenda deleniti hic.</p>
+            </div>
+            <!-- /.Grid column 1.1 -->
+            <!-- Grid column 1.2 -->
+            <div class="col-md-3 mb-4">
+                <!--span style="color: darkorange;"-->
+                    <i class="fas fa-rocket fa-6x blue-text"></i>
+                <!--/span-->
+                <h4 class="my-4 font-weight-bold">Spacecraft</h4>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam, aperiam minima assumenda deleniti hic.</p>
+            </div>
+            <!-- /.Grid column 1.2 -->
+            <!-- Grid column 1.3 -->
+            <div class="col-md-3 mb-4">
+                <!--span style="color: darkorange;"-->
+                    <i class="fas fa-globe-americas fa-6x blue-text"></i>
+                <!--/span-->
+                <h4 class="my-4 font-weight-bold">Earth Orbit Missions</h4>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam, aperiam minima assumenda deleniti hic.</p>
+            </div>
+            <!-- /.Grid column 1.3 -->
+            <!-- Grid column 1.4 -->
+            <div class="col-md-3 mb-4">
+                <!--span style="color: darkorange;"-->
+                    <i class="fas fa-moon fa-6x blue-text"></i>
+                <!--/span-->
+                <h4 class="my-4 font-weight-bold">Lunar Missions</h4>
+                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                        maiores nam, aperiam minima assumenda deleniti hic.</p>
+            </div>
+            <!-- /.Grid column 1.4 -->
+        </div>
+        <!-- /.Grid row 1 -->
+        <!-- Grid row 2 -->
+        <!-- /.Grid row 2 -->
+    </section>
+    <!-- /.API info -->
+</main>
+{% endblock page_content %}
+<!-- /.Main page content -->
+
+{% block extra_js %}
+    <!-- Project JS -->
+{% endblock extra_js %}

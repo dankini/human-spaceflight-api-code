@@ -1,0 +1,25 @@
+{% extends 'account/_base_account.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Login | Human Spaceflight API' %}{% endblock title %}
+
+<!-- Account area content -->
+{% block account_page_content %}
+	<!-- Card header -->
+	<div class="d-flex align-items-center text-uppercase mb-4">
+		<i class="fas fa-sign-in-alt fa-2x grey-text pr-3"></i>
+		<h4 class="h4-responsive m-0">{% trans 'Log In' %}</h4>
+	</div>
+	<!-- /.Card header -->
+	<!-- Form -->
+	<form method="post">
+    	{% csrf_token %}
+    	{{ form|crispy }}
+    	<button class="btn btn-primary" type="submit">{% trans 'Log In' %}</button>
+	</form>
+	<!-- /.Form -->
+  	<a href="{% url 'account_reset_password' %}">{% trans 'Forgot Password?' %}</a>
+{% endblock account_page_content %}
+<!-- /.Account area content -->

@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans '500: Server Error | Human Spaceflight API' %}{% endblock title %}
+
+{% block content %}
+<h1>{% trans '500: Server Error' %}</h1>
+<p>{% trans 'Looks like something went wrong!' %}</p>
+{% endblock content %}

@@ -1,0 +1,284 @@
+<!-- templates/_base.html -->
+<!-- Create _base.html with navbar -->
+{% load static %}
+{% load socialaccount %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+    	<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A framework for launching new Django projects quickly.">
+		<meta name="author" content="">
+		<!-- /.Required meta tags -->
+
+    	<!-- Favicon icon -->
+    	<link link rel="shortcut icon" type="image/x-icon" href="{% static 'base/images/favicon.ico' %}">
+    	<!-- /.Favicon icon -->
+
+    	<!-- Tab title -->
+    	<title>
+      		{% block title %}
+		  	<!-- Override this in templates to add page title -->
+      		{% endblock title %}
+    	</title>
+    	<!-- /.Tab title -->
+    
+		<!-- Global stylesheets CSS -->
+		<!-- Font Awesome -->
+		<link
+			href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="href=https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap"
+			rel="stylesheet"
+		/> 
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+			rel="stylesheet"
+		/>
+		<!-- _Base.css CSS -->
+		<link
+			href="{% static 'base/css/_base.css' %}"
+			rel="stylesheet"
+		/>
+		<!-- Local extra CSS -->
+		{% block extra_css %}
+			<!-- Override this in templates to add extra stylesheets -->
+		{% endblock extra_css %}
+		<!-- /.Global stylesheets CSS -->
+  	</head>
+
+  	<body>
+    	<!-- Navbar -->
+		<nav class="navbar navbar-expand-sm navbar-dark mdb-color unique-color-dark mb-0 smart-scroll">
+			<a class="navbar-brand" href="{% url 'home' %}">
+				<img src="{% static 'base/images/humanspaceflightapi-navbarlogotext.svg' %}" alt="humanspaceflightapi_logo">
+			</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			{% if user.is_authenticated %}
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+				<a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-user-circle fa-2x mr-2"></i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right unique-color-dark" aria-labelledby="userMenu">
+					<a class="dropdown-item disabled blue-text p-1 pl-3"><i class="fas fa-user-astronaut pr-3"></i>{{ user.email }}</a>
+					<div class="dropdown-divider"></div>
+					<!--a class="dropdown-item text-white p-1 pl-3"><i class="fas fa-folder-open pr-3"></i>{% trans 'My swimplans' %}</a>
+					<div class="dropdown-divider"></div-->
+					<a class="dropdown-item text-white p-1 pl-3"><i class="fas fa-user-alt pr-3"></i>{% trans 'Profile settings' %}</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item text-white p-1 pl-3" href="{% url 'account_change_password' %}"><i class="fas fa-key pr-3"></i>{% trans 'Change password' %}</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item text-white p-1 pl-3" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt pr-3"></i>{% trans 'Log out' %}</a>
+				</div>
+				</li>
+			</ul>
+			{% else %}
+			<form class="form-inline ml-auto">
+				<a href="{% url 'account_login' %}" class="btn btn-outline-primary waves-effect"><i class="fas fa-sign-in-alt pr-2"></i>{% trans 'Log In' %}</a>
+				<a href="{% url 'account_signup' %}" class="btn btn-primary ml-2"><i class="fas fa-user-plus pr-2"></i>{% trans 'Sign Up' %}</a>
+				<!--<button class="btn btn-success" type="submit">Log In</button>-->
+				<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button-->  
+			</form>
+			{% endif %}
+		</div>
+		</nav>
+    	<!-- /.Navbar -->
+
+		<!-- Main page content -->
+		{% block page_content %}
+			<!-- Override this in templates to add extra page content -->
+		{% endblock page_content %}
+		<!-- /.Main page content -->
+
+		<!-- Footer -->
+		<footer class="page-footer font-small unique-color-dark">
+
+			<!-- Social buttons -->
+			<div class="blue">
+				<div class="container">
+					<!--Grid row-->
+					<div class="row py-3 d-flex align-items-center">
+			
+						<!--Grid column-->
+						<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+							<h5 class="mb-0 white-text">Connect with us!</h5>
+						</div>
+						<!--Grid column-->
+			
+						<!--Grid column-->
+						<div class="col-md-6 col-lg-7 text-center text-md-right">
+							<!--Facebook-->
+							<a class="fb-ic ml-0">
+								<i class="fab fa-facebook fa-2x white-text mr-4"> </i>
+							</a>
+							<!--Twitter-->
+							<a class="tw-ic">
+								<i class="fab fa-twitter fa-2x white-text mr-4"> </i>
+							</a>
+							<!--Instagram-->
+							<a class="ins-ic">
+								<i class="fab fa-instagram fa-2x white-text mr-4"> </i>
+							</a>
+							<!--Linkedin-->
+							<a class="li-ic">
+								<i class="fab fa-linkedin fa-2x white-text mr-4"> </i>
+							</a>
+							<!--Google +-->
+							<a class="gplus-ic">
+								<i class="fab fa-google-plus fa-2x white-text mr-4"> </i>
+							</a>
+						</div>
+						<!--Grid column-->
+			
+					</div>
+					<!--Grid row-->
+				</div>
+			</div>
+			<!-- Social buttons -->
+			
+			<!--Footer Links-->
+			<div class="container mt-4 text-center text-md-left">
+				<div class="row">
+			
+					<!--First column-->
+					<div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+						<h6 class="text-uppercase font-weight-bold">
+							<strong>humanspaceflightapi.com</strong>
+						</h6>
+						<hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+							maiores nam, aperiam minima assumenda deleniti hic.</p>
+					</div>
+					<!--/.First column-->
+			
+					<!--Second column-->
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+						<h6 class="text-uppercase font-weight-bold">
+							<strong>Products</strong>
+						</h6>
+						<hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+					</div>
+					<!--/.Second column-->
+			
+					<!--Third column-->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+						<h6 class="text-uppercase font-weight-bold">
+							<strong>Useful links</strong>
+						</h6>
+						<hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+						<p>
+							<a href="#!">Your Account</a>
+						</p>
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+						<p>
+							<a href="#!">Lorem ipsum</a>
+						</p>
+						<p>
+							<a href="#!">Help</a>
+						</p>
+					</div>
+					<!--/.Third column-->
+			
+					<!--Fourth column-->
+					<div class="col-md-4 col-lg-3 col-xl-3">
+						<h6 class="text-uppercase font-weight-bold">
+							<strong>Contact</strong>
+						</h6>
+						<hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+						<p>
+							<i class="fa fa-envelope mr-3"></i> info@humanspaceflightapi.com</p>
+						<p>
+							<i class="fa fa-phone mr-3"></i> + 01234 567 890</p>
+						<p>
+							<i class="fas fa-home mr-3"></i></i> London, UK</p>
+					</div>
+					<!--/.Fourth column-->
+			
+				</div>
+			</div>
+			<!--/.Footer Links-->
+			
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">
+				Copyright © 2022 Human Spaceflight API. All rights reserved.
+			</div>
+			<!-- Copyright -->
+			
+		</footer>
+		<!-- Footer -->
+
+		<!-- Global JS -->
+		<!-- JQuery -->
+		<script
+		type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+		<!-- Bootstrap tooltips -->
+		<script
+		type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+		</script>
+		<!-- Bootstrap core JavaScript -->
+		<script
+		src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous">
+		</script>
+		<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous">
+		</script>
+		<!-- MDB core JavaScript -->
+		<script
+		type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js">
+		</script>
+		<!-- Local base JS -->
+		<script
+		src="{% static 'base/js/_base.js' %}">
+		</script>
+		<!-- Local extra JS -->
+		{% block extra_js %}
+			<!-- Override this in templates to add extra javascript -->
+		{% endblock extra_js %}
+		<!-- /.JS -->
+	</body>
+</html>

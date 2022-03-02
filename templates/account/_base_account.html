@@ -1,0 +1,58 @@
+<!-- templates/account/_base_account.html -->
+<!-- Create _base_account.html for all allauth related account pages -->
+{% extends '_base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% load i18n %}
+
+<!-- Extra CSS -->
+{% block extra_css %}
+<link
+    href="{% static "account/css/_base_account.css" %}"
+    rel="stylesheet"
+/>
+{% endblock extra_css %}
+<!-- Extra CSS -->
+
+<!-- Main Page content -->
+{% block page_content %}
+<main>
+    <!-- Section: Account page content -->
+    <!-- Background image -->
+    <section id="background-img"
+            class="view"
+            style="background-image: url('{% static "account/images/account_bkg_img.png" %}');";>
+            <!--img src="{% static 'pages/images/home_banner_1.jpg' %}" class="img-fluid" alt="My image"-->
+        <!-- Mask -->
+        <div class="mask rgba-black-light">
+            <!-- Content -->
+            <div class="container align-items-center justify-content-center">
+                <!-- Grid row -->
+                <div class="row d-flex">
+                    <!-- Grid column -->
+                    <div class="col-md-4 py-5 my-5">
+                        <!-- Form -->
+                        <div class="card">
+                            <div class="card-body text-white mdb-color unique-color-dark z-depth-2 px-4">
+                                <!-- Account area content -->
+                                {% block account_page_content %}  
+                                    <!-- Override this in account-based (allauth) templates to add extra page content -->
+                                {% endblock account_page_content %}
+                                <!-- /.Account area content -->
+                            </div>
+                        </div>
+                        <!-- /.Form -->
+                    </div>
+                    <!-- /.Grid column -->
+                </div>
+                <!-- /.Grid row -->
+            </div>
+            <!-- /.Content -->
+        </div>
+        <!-- /.Mask -->
+    </section>
+    <!-- /.Background image -->
+    <!-- /.Section: Account page content -->
+</main>
+{% endblock page_content %}
+<!-- /.Main page content -->

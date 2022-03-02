@@ -1,0 +1,31 @@
+{% extends 'account/_base_account.html' %}
+{% load static %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Social Signup | Human Spaceflight API' %}{% endblock title %}
+
+<!-- Account area content -->
+{% block account_page_content %}
+	<!-- Card header -->
+	<div class="d-flex text-center align-items-center text-uppercase mb-4">
+		<i class="fas fa-users fa-2x grey-text pr-3"></i>
+		<h4 class="h4-responsive m-0">{% trans 'Social Sign Up' %}</h34
+	</div>
+	<!-- /.Card header -->
+	<p>
+		{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
+			You are about to use your <span style="color: grey">{{provider_name}}</span> account to login to <span style="color: grey">{{site_name}}</span>. As a final step, please complete the following form:
+		{% endblocktrans %}
+	</p>
+
+	<!-- Form -->
+	<form method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button class="btn btn-primary" type="submit">{% trans 'Sign Up' %}</button>
+	</form>
+	<!-- /.Form -->
+{% endblock account_page_content %}
+<!-- /.Account area content -->

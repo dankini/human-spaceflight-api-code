@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans '403: Forbidden | Human Spaceflight API' %}{% endblock title %}
+
+{% block content %}
+<h1>{% trans '403: Forbidden' %}</h1>
+<p>{% trans 'CSRF verification failed. Request aborted.' %}</p>
+{% endblock content %}

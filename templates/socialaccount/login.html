@@ -1,0 +1,43 @@
+{% extends 'account/_base_account.html' %}
+{% load static %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Social Signup | Human Spaceflight API' %}{% endblock title %}
+
+<!-- Account area content -->
+{% block account_page_content %}
+    <!-- Card header -->
+	<div class="d-flex text-center align-items-center text-uppercase mb-4">
+		<i class="fas fa-users fa-2x grey-text pr-3"></i>
+        <h4 class="h4-responsive m-0">
+            {% blocktrans with provider.name as provider %}
+                {{ provider }} Sign Up
+            {% endblocktrans %}
+        </h4>
+	</div>
+	<!-- /.Card header -->
+
+    {% if process == "connect" %}
+        <p>
+            {% blocktrans with provider.name as provider %}
+                You are about to connect a new third party account from <span style="color: #2196f3">{{ provider }}</span>.
+            {% endblocktrans %}
+        </p>
+    {% else %}
+        <p>
+            {% blocktrans with provider.name as provider %}
+                You are about to sign in using a third party account from <span style="color: #2196f3">{{ provider }}</span>.
+            {% endblocktrans %}
+        </p>
+    {% endif %}
+
+    <!-- Form -->
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary" type="submit">{% trans 'Continue' %}</button>
+    </form>
+    <!-- /.Form -->
+{% endblock account_page_content %}
+<!-- /.Account area content -->

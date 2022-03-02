@@ -1,0 +1,41 @@
+{% extends 'account/_base_account.html' %}
+{% load static %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block title %}{% trans 'Signup | Human Spaceflight API' %}{% endblock title %}
+
+<!-- Account area content -->
+{% block account_page_content %}
+	<!-- Card header -->
+	<div class="d-flex align-items-center text-uppercase mb-4">
+		<i class="fas fa-user-plus fa-2x grey-text pr-3"></i>
+		<h4 class="h4-responsive m-0">{% trans 'Sign Up' %}</h4>
+	</div>
+	<!-- /.Card header -->
+	<!-- Form -->
+	<form method="post">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button class="btn btn-primary" type="submit">{% trans 'Sign Up' %}</button>
+		<hr class="hr-light mx-5">
+		<p class="text-center">Or continue with</p>
+		<div class="row px-5 justify-content-center text-center"><!--add colour here if want below content in rounded coloured box-->
+			<div class="col-md-6 hoverable">
+				<a class="white-text" href="{% provider_login_url 'github' %}">
+					<i class="fab fa-github fa-2x"></i>
+					<p class="m-0 ">GitHub</p>
+				</a>
+			</div>
+			<div class="col-md-6 hoverable">
+				<a class="white-text" href="{% provider_login_url 'bitbucket_oauth2' %}">
+					<i class="fab fa-bitbucket fa-2x"></i>
+					<p class="m-0 ">Bitbucket</p>
+				</a>
+			</div>
+		</div>
+	</form>
+	<!-- /.Form -->
+{% endblock account_page_content %}
+<!-- /.Account area content -->
