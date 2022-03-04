@@ -29,6 +29,8 @@ urlpatterns = [
     path("", include("apps.pages.urls")),
     # User Management
     path("accounts/", include("allauth.urls")),
+    # Agency
+    path("agencies/", include("apps.agencies.urls")),
 ]
 
 if settings.DEBUG:

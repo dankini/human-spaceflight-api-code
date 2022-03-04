@@ -1,0 +1,26 @@
+html, body, header,
+#background-img {
+  height: 100vh;
+}
+
+.card {background-color: rgba(28, 35, 49, 0.6);}
+
+.card,
+.card .card-body,
+.card .card-body h1,
+.card .card-body h2,
+.card .card-body h3,
+.card .card-body h4,
+.card .card-body h5,
+.card .card-body h6,
+.card .card-body p {
+  font-weight: 300;
+}
+
+#background-img {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}

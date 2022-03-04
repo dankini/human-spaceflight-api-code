@@ -1,0 +1,26 @@
+<!-- templates/agencies/agency_detail.html -->
+
+{% extends 'agencies/_base_agencies.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{{ agency.name }}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Agency area content -->
+{% block agencies_page_content %}
+	<!-- Section: Agency detail info -->
+    <section id="agency-detail-" class="container">
+        <h5><a href="">{{ agency.name }}</a></h5>
+        <hr></hr>
+        <p>Abbrv: {{ agency.abbreviation }}</p>
+        <p>Country: {{ agency.country }}</p>
+        <p>Date formed: {{ agency.date_formed }}</p>
+        <p>Website: {{ agency.website }}</p>
+    </section>
+    <!--/section-->
+    <!-- /.Agency detail info -->
+</main>
+{% endblock agencies_page_content %}
+<!-- /.Agency area content -->

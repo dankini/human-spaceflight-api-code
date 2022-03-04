@@ -1,0 +1,27 @@
+<!-- templates/agencies/agency_list.html -->
+
+{% extends 'agencies/_base_agencies.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{% trans 'Agencies | Human Spaceflight API' %}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Agency area content -->
+{% block agencies_page_content %}
+	<!-- Section: Agency list -->
+    <section id="agency-list" class="container">
+        <h5>List of Space Agencies</h5>
+        <hr></hr>
+        {% for agency in agency_list %}
+            <div>
+                <h6><a href="{{ agency.get_absolute_url }}">{{ agency.name }}</a></h6>
+            </div>
+        {% endfor %}
+    </section>
+    <!--/section-->
+    <!-- /.Agency list info -->
+</main>
+{% endblock agencies_page_content %}
+<!-- /.Agency area content -->
