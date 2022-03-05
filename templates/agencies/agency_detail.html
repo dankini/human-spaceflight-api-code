@@ -1,6 +1,6 @@
 <!-- templates/agencies/agency_detail.html -->
 
-{% extends 'agencies/_base_agencies.html' %}
+{% extends 'apis_general/_base_apis_general.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -9,7 +9,7 @@
 <!-- /.Tab title -->
 
 <!-- Agency area content -->
-{% block agencies_page_content %}
+{% block apis_general_page_content %}
 	<!-- Section: Agency detail info -->
     <section id="agency-detail-" class="container">
         <h5>{{ agency.name }}</h5>
@@ -22,5 +22,5 @@
     <!--/section-->
     <!-- /.Agency detail info -->
 </main>
-{% endblock agencies_page_content %}
+{% endblock apis_general_page_content %}
 <!-- /.Agency area content -->

@@ -1,5 +1,5 @@
-<!-- templates/agencies/_base_agencies.html -->
-<!-- Create _base_agencies.html for all agency related pages -->
+<!-- templates/agencies/_base_apis_general.html -->
+<!-- Create _base_apis_general.html for all api related pages -->
 {% extends '_base.html' %}
 {% load static %}
 {% load i18n %}
@@ -7,7 +7,7 @@
 <!-- Extra CSS -->
 {% block extra_css %}
 <link
-    href="{% static "agencies/css/_base_agencies.css" %}"
+    href="{% static "apis_general/css/_base_apis_general.css" %}"
     rel="stylesheet"
 />
 {% endblock extra_css %}
@@ -20,7 +20,7 @@
     <!-- Background image -->
     <section id="background-img"
             class="view"
-            style="background-image: url('{% static "agencies/images/agencies_bkg_img.png" %}');";>
+            style="background-image: url('{% static "apis_general/images/apis_general_bkg_img.png" %}');";>
             <!--img src="{% static 'pages/images/home_banner_1.jpg' %}" class="img-fluid" alt="My image"-->
         <!-- Mask -->
         <div class="mask rgba-black-light">
@@ -34,9 +34,9 @@
                         <div class="card">
                             <div class="card-body text-white z-depth-2 px-4">
                                 <!-- Account area content -->
-                                {% block agencies_page_content %}  
+                                {% block apis_general_page_content %}  
                                     <!-- Override this in account-based (allauth) templates to add extra page content -->
-                                {% endblock agencies_page_content %}
+                                {% endblock apis_general_page_content %}
                                 <!-- /.Account area content -->
                             </div>
                         </div>
