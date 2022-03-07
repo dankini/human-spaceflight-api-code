@@ -11,7 +11,7 @@ class AgencyTests(TestCase):
             name="Test space agency",
             abbreviation="TSS",
             country="Republic of Test",
-            date_formed="2022-03-04",
+            formed_date="2022-03-04",
             website="www.testagency.com",
         )
 
@@ -19,7 +19,7 @@ class AgencyTests(TestCase):
         self.assertEqual(f"{self.agency.name}", "Test space agency")
         self.assertEqual(f"{self.agency.abbreviation}", "TSS")
         self.assertEqual(f"{self.agency.country}", "Republic of Test")
-        self.assertEqual(f"{self.agency.date_formed}", "2022-03-04")
+        self.assertEqual(f"{self.agency.formed_date}", "2022-03-04")
         self.assertEqual(f"{self.agency.website}", "www.testagency.com")
 
     def test_agency_list_view(self):

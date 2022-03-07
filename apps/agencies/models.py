@@ -9,9 +9,8 @@ class Agency(models.Model):
     name = models.CharField(max_length=100)
     abbreviation = models.CharField(max_length=20)
     country = models.CharField(max_length=50, blank=True)
-    date_formed = models.DateField(
-        auto_now=False,
-        auto_now_add=False,
+    formed_date = models.DateField(
+        auto_now=False, auto_now_add=False, null=True, blank=True
     )
     website = models.URLField(max_length=100, blank=True)
 

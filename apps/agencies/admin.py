@@ -9,7 +9,7 @@ class AgencyAdmin(admin.ModelAdmin):
         "name",
         "abbreviation",
         "country",
-        "date_formed",
+        "formed_date",
         "website",
     ]
 
