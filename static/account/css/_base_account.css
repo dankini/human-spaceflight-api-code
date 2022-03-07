@@ -3,6 +3,8 @@ html, body, header,
   height: 100vh;
 }
 
+.card {background-color: rgba(28, 35, 49, 0.6);}
+
 .card,
 .card .card-body,
 .card .card-body h1,
