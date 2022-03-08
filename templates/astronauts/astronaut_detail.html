@@ -1,0 +1,26 @@
+<!-- templates/agencies/astronaut_detail.html -->
+
+{% extends 'apis_general/_base_apis_general.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{{ astronaut.last_name }} | Human Spaceflight API{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Astronaut area content -->
+{% block apis_general_page_content %}
+	<!-- Section: Astronaut detail info -->
+    <section id="astronaut-detail-" class="container">
+        <h5>{{ astronaut.last_name }}, {{ astronaut.first_name }} {{ astronaut.nick_name }}</h5>
+        <hr></hr>
+        <p>First Name: {{ astronaut.first_name }}</p>
+        <p>Middle Name: {{ astronaut.middle_name }}</p>
+        <p>Nick Name: {{ astronaut.nick_name }}</p>
+        <p>Last Name: {{ astronaut.last_name }}</p>
+    </section>
+    <!--/section-->
+    <!-- /.Astronaut detail info -->
+</main>
+{% endblock apis_general_page_content %}
+<!-- /.Astronaut area content -->

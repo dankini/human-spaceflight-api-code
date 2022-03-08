@@ -67,6 +67,7 @@ LOCAL_PROJECT_APPS = [
     "apps.pages.apps.PagesConfig",  # aka pages in djangox, cookiecutter etc
     "apps.accounts.apps.AccountsConfig",
     "apps.agencies.apps.AgenciesConfig",
+    "apps.astronauts.apps.AstronautsConfig",
 ]
 
 INSTALLED_APPS = DJANGO_CORE_APPS + THIRD_PARTY_APPS + LOCAL_PROJECT_APPS

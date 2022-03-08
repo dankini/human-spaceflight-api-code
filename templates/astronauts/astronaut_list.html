@@ -1,0 +1,42 @@
+<!-- templates/agencies/astronaut_list.html -->
+
+{% extends 'apis_general/_base_apis_general.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{% trans 'Astronauts | Human Spaceflight API' %}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Astronaut area content -->
+{% block apis_general_page_content %}
+	<!-- Section: Astronaut list -->
+    <section id="astronaut-list" class="container">
+        <h5>List of Astronauts/Cosmonauts</h5>
+        <hr></hr>
+        <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Name (Last, First)</th>
+                    <th scope="col">Nationality</th>
+                    <th class="text-right" scope="col">First Space Mission</th>
+                    <th class="text-right" scope="col">Career Duration in Space</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for astronaut in astronaut_list %} 
+                <tr>
+                    <td><a href="{{ astronaut.get_absolute_url }}">{{ astronaut.last_name }}, {{ astronaut.first_name }} {{ astronaut.nick_name }}</a></td>
+                    <td>{{ astronaut.nationality }}</td>
+                    <td class="text-right">{{ astronaut.first_time_in_space_date }}</td>
+                    <td class="text-right">{{ astronaut.total_duration_space_secs }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <!--/section-->
+    <!-- /.Astronaut list info -->
+</main>
+{% endblock apis_general_page_content %}
+<!-- /.Astronaut area content -->

@@ -24,3 +24,7 @@ html, body, header,
   background-size: cover;
   background-attachment: fixed;
 }
+
+td a {
+  color: #007bff !important;
+}

@@ -29,8 +29,10 @@ urlpatterns = [
     path("", include("apps.pages.urls")),
     # User Management
     path("accounts/", include("allauth.urls")),
-    # Agency
+    # Agencies
     path("agencies/", include("apps.agencies.urls")),
+    # Astronauts
+    path("astronauts/", include("apps.astronauts.urls")),
 ]
 
 if settings.DEBUG:
