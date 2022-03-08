@@ -6,6 +6,12 @@
 
 <!-- Extra CSS -->
 {% block extra_css %}
+<!-- DataTables CSS -->
+<link
+    href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css"
+    rel="stylesheet"
+/>
+<!-- Local project CSS -->
 <link
     href="{% static "apis_general/css/_base_apis_general.css" %}"
     rel="stylesheet"
@@ -55,3 +61,17 @@
 </main>
 {% endblock page_content %}
 <!-- /.Main page content -->
+
+{% block extra_js %}
+<!-- DataTables JS -->
+<script
+    src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js">
+</script>
+<script
+    src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js">
+</script>
+<!-- Local project JS -->
+<script
+    src="{% static 'apis_general/js/_base_apis_general.js' %}">
+</script>
+{% endblock extra_js %}
