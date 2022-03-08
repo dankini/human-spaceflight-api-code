@@ -14,11 +14,22 @@
     <section id="agency-list" class="container">
         <h5>List of Space Agencies</h5>
         <hr></hr>
-        {% for agency in agency_list %}
-            <div>
-                <h6><a href="{{ agency.get_absolute_url }}">{{ agency.name }}</a></h6>
-            </div>
-        {% endfor %}
+        <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Country Origin</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for agency in agency_list %}
+                <tr>
+                    <td><a href="{{ astronaut.get_absolute_url }}">{{ agency.name }}, {{ agency.abbreviation }}</a></td>
+                    <td>{{ agency.country }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </section>
     <!--/section-->
     <!-- /.Agency list info -->
