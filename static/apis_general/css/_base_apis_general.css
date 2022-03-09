@@ -25,6 +25,29 @@ html, body, header,
   background-attachment: fixed;
 }
 
+/* datatables */
 td a {
   color: #007bff !important;
+}
+
+#paginationSimpleNumbers_wrapper {
+  color: #c9e5fc !important;
+  font-size: 14px;
+}
+
+#paginationSimpleNumbers_paginate,
+.page-link {
+  color: #c9e5fc !important;
+  font-size: 14px;
+}
+
+#paginationSimpleNumbers_paginate {
+  background-color: transparent !important;
+}
+
+.page-item:hover,
+.page-link:hover,
+.page-item.active,
+.page-link.active {
+  background-color: #4285f4 !important;
 }
