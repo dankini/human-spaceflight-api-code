@@ -7,8 +7,11 @@ from apps.astronauts.views import Astronaut
 
 
 class AstronautTests(TestCase):
-    def setUp(self):
-        self.astronaut = Astronaut.objects.create(
+    # https://docs.djangoproject.com/en/4.0/topics/testing/tools/#django.test.TestCase.setUpTestData
+    @classmethod
+    def setUpTestData(cls):
+        # Commented out lines earmarked as possibly required for future use
+        cls.astronaut = Astronaut.objects.create(
             first_name="Test astronaut firstname",
             middle_name="Test astronaut middlename",
             nick_name="Test astronaut nickname",
@@ -38,7 +41,7 @@ class AstronautTests(TestCase):
             wikipedia_bio_website="www.testastronaut.com",
         )
 
-    def test_astronaut_listing(self):
+    def test_astronaut_content(self):
         self.assertEqual(f"{self.astronaut.first_name}", "Test astronaut firstname")
         self.assertEqual(f"{self.astronaut.middle_name}", "Test astronaut middlename")
         self.assertEqual(f"{self.astronaut.nick_name}", "Test astronaut nickname")

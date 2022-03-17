@@ -7,6 +7,7 @@ from apps.astronauts.views import Astronaut
 
 
 class EvaTests(TestCase):
+    # https://docs.djangoproject.com/en/4.0/topics/testing/tools/#django.test.TestCase.setUpTestData
     @classmethod
     def setUpTestData(cls):
         # First create astronaut based on test_astronauts.py format

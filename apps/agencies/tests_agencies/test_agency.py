@@ -6,8 +6,10 @@ from apps.agencies.views import Agency
 
 
 class AgencyTests(TestCase):
-    def setUp(self):
-        self.agency = Agency.objects.create(
+    # https://docs.djangoproject.com/en/4.0/topics/testing/tools/#django.test.TestCase.setUpTestData
+    @classmethod
+    def setUpTestData(cls):
+        cls.agency = Agency.objects.create(
             name="Test space agency",
             abbreviation="TSS",
             country="Republic of Test",
@@ -15,7 +17,7 @@ class AgencyTests(TestCase):
             website="www.testagency.com",
         )
 
-    def test_agency_listing(self):
+    def test_agency_content(self):
         self.assertEqual(f"{self.agency.name}", "Test space agency")
         self.assertEqual(f"{self.agency.abbreviation}", "TSS")
         self.assertEqual(f"{self.agency.country}", "Republic of Test")
