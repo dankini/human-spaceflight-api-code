@@ -3,33 +3,56 @@
 from django.test import TestCase
 from django.urls import reverse
 from apps.evas.views import Eva
+from apps.astronauts.views import Astronaut
 
 
 class EvaTests(TestCase):
-    def setUp(self):
-        self.astronaut = Eva.objects.create(
-            # code="EVA9999",
+    @classmethod
+    def setUpTestData(cls):
+        # First create astronaut based on test_astronauts.py format
+        # Note only mandatory fields used, the rest commented out here
+        cls.astronaut = Astronaut.objects.create(
+            first_name="Test astronaut firstname",
+            # middle_name="Test astronaut middlename",
+            # nick_name="Test astronaut nickname",
+            last_name="Test astronaut lastname",
+            birth_date="1930-03-07",
+            # birth_town_city="Test town",
+            # birth_state="Test state",
+            # birth_country="Test country",
+            # death_date="2022-03-07",
+            # resting_place="Test resting place",
+            rank_attained="Test rank attained",
+            service_branch="Test service branch",
+            nationality="Test nationality",
+            first_time_in_space_date="1965-03-07",
+            total_duration_space_secs="00:00:01",
+            # retirement_date="1972-03-07",
+            # wikipedia_bio_website="www.testastronaut.com",
+        )
+
+        # Now create test EVA object. note astronaut line 'astronaut=cls.astronaut'
+        cls.eva = Eva.objects.create(
+            code="9999",
             # mission="Test mission",
-            astronaut="/astronauts/56b4d467-12bb-4136-aa1b-dcaf1c59a469",
-            type="Test type",
+            astronaut=cls.astronaut,
+            type="SU",
             date="1964-03-10",
-            duration_secse="00:00:01",
-            tethered="Test tethered",
-            planned="Test planned",
+            duration_secs="00:00:01",
+            tethered="TE",
+            planned="PL",
             notes="Test notes test notes test notes test notes",
         )
 
-    def test_eva_listing(self):
-        # self.assertEqual(f"{self.eva.code}", "EVA9999")
+    def test_eva_content(self):
+        self.assertEqual(f"{self.eva.code}", "9999")
         # self.assertEqual(f"{self.eva.mission}", "")
-        self.assertEqual(
-            f"{self.eva.astronaut}", "/astronauts/56b4d467-12bb-4136-aa1b-dcaf1c59a469"
-        )
-        self.assertEqual(f"{self.eva.type}", "Test type")
+        self.assertEqual(f"{self.eva.astronaut}", "Test astronaut lastname")
+        self.assertEqual(f"{self.eva.type}", "SU")
         self.assertEqual(f"{self.eva.date}", "1964-03-10")
-        self.assertEqual(f"{self.evat.duration_secs}", "00:00:01")
-        self.assertEqual(f"{self.eva.tethered}", "Test tethered")
-        self.assertEqual(f"{self.eva.planned}", "Test planned")
+        self.assertEqual(f"{self.eva.duration_secs}", "00:00:01")
+        self.assertEqual(f"{self.eva.tethered}", "TE")
+        self.assertEqual(f"{self.eva.planned}", "PL")
         self.assertEqual(
             f"{self.eva.notes}", "Test notes test notes test notes test notes"
         )
@@ -37,9 +60,7 @@ class EvaTests(TestCase):
     def test_eva_list_view(self):
         response = self.client.get(reverse("eva_list"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(
-            response, "/astronauts/56b4d467-12bb-4136-aa1b-dcaf1c59a469"
-        )
+        self.assertContains(response, "est astronaut lastname")
         self.assertTemplateUsed(response, "evas/eva_list.html")
 
     def test_eva_detail(self):
