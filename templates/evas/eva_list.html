@@ -17,7 +17,7 @@
         <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
             <thead>
                 <tr>
-                    <th scope="col">EVA No.</th>
+                    <th scope="col">EVA</th>
                     <th scope="col">Astronaut</th>
                     <th scope="col">Type</th>
                     <th class="text-right" scope="col">Date</th>
@@ -28,7 +28,7 @@
             {% for eva in eva_list %} 
                 <tr>
                     <!-- Note formatting for apdded zeros -->
-                    <td><a href="{{ eva.get_absolute_url }}">EVA-{{ eva.seq_code_number|stringformat:"04d" }}</a></td>
+                    <td><a href="{{ eva.get_absolute_url }}">EVA-{{ eva.code|stringformat:"04d" }}</a></td>
                     <td>{{ eva.get_full_astronaut_name }}</td>
                     <!-- for type to display correctly instead of <choice abbr. code> need to specify <model_class>.get_<fieldname>_display, see line below -->
                     <td>{{ eva.get_type_display }}</td>

@@ -12,9 +12,9 @@
 {% block apis_general_page_content %}
 	<!-- Section: EVA detail info -->
     <section id="eva-detail-" class="container">
-        <h5>{{ eva.seq_code_number|stringformat:"04d" }}</h5>
+        <h5>{{ eva.code|stringformat:"04d" }}</h5>
         <hr></hr>
-        <p>EVA No.: {{ eva.seq_code_number|stringformat:"04d" }}</p>
+        <p>EVA: {{ eva.code|stringformat:"04d" }}</p>
         <p>Astronaut: {{ eva.get_full_astronaut_name }}</p>
         <p>Type: {{  eva.get_type_display }}</p>
         <p>Date: {{  eva.date }}</p>

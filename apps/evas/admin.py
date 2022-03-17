@@ -6,7 +6,7 @@ from apps.evas.models import Eva
 
 class EvaAdmin(admin.ModelAdmin):
     list_display = [
-        "seq_code_number",
+        "code",
         "astronaut",
         "date",
         "type",

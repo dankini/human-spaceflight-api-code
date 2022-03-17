@@ -37,7 +37,7 @@ class Eva(models.Model):
         default=uuid.uuid4,
         editable=False,
     )
-    seq_code_number = models.IntegerField()
+    code = models.IntegerField()
     astronaut = models.ForeignKey(
         "astronauts.Astronaut",
         on_delete=models.CASCADE,
