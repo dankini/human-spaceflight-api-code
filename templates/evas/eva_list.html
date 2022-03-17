@@ -1,0 +1,46 @@
+<!-- templates/evas/astronaut_list.html -->
+
+{% extends 'apis_general/_base_apis_general.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{% trans 'EVAs | Human Spaceflight API' %}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Eva area content -->
+{% block apis_general_page_content %}
+	<!-- Section: EVA list -->
+    <section id="eva-list" class="container">
+        <h5>List of EVAs</h5>
+        <!--hr></hr-->
+        <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">EVA No.</th>
+                    <th scope="col">Astronaut</th>
+                    <th scope="col">Type</th>
+                    <th class="text-right" scope="col">Date</th>
+                    <th class="text-right" scope="col">Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for eva in eva_list %} 
+                <tr>
+                    <!-- Note formatting for apdded zeros -->
+                    <td><a href="{{ eva.get_absolute_url }}">EVA-{{ eva.seq_code_number|stringformat:"04d" }}</a></td>
+                    <td>{{ eva.get_full_astronaut_name }}</td>
+                    <!-- for type to display correctly instead of <choice abbr. code> need to specify <model_class>.get_<fieldname>_display, see line below -->
+                    <td>{{ eva.get_type_display }}</td>
+                    <td class="text-right">{{ eva.date }}</td>
+                    <td class="text-right">{{ eva.duration_secs }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <!--/section-->
+    <!-- /.EVA list info -->
+</main>
+{% endblock apis_general_page_content %}
+<!-- /.EVA area content -->

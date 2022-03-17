@@ -33,6 +33,8 @@ urlpatterns = [
     path("agencies/", include("apps.agencies.urls")),
     # Astronauts
     path("astronauts/", include("apps.astronauts.urls")),
+    # Evas
+    path("evas/", include("apps.evas.urls")),
 ]
 
 if settings.DEBUG:

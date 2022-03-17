@@ -68,6 +68,7 @@ LOCAL_PROJECT_APPS = [
     "apps.accounts.apps.AccountsConfig",
     "apps.agencies.apps.AgenciesConfig",
     "apps.astronauts.apps.AstronautsConfig",
+    "apps.evas.apps.EvasConfig",
 ]
 
 INSTALLED_APPS = DJANGO_CORE_APPS + THIRD_PARTY_APPS + LOCAL_PROJECT_APPS
