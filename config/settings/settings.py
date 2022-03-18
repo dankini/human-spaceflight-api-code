@@ -61,6 +61,7 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "debug_toolbar",
     "django_extensions",
+    "import_export",
 ]
 
 LOCAL_PROJECT_APPS = [
@@ -224,3 +225,6 @@ ACCOUNT_SESSION_REMEMBER = None
 
 # controls whether or not the endpoints for initiating a social login (for example, "/accounts/google/login/") require a POST request to initiate the handshake. As requiring a POST is more secure, the default of this new setting is `False`
 SOCIALACCOUNT_LOGIN_ON_GET = False
+
+# DJANGO-IMPORT-EXPORT SETTINGS
+IMPORT_EXPORT_USE_TRANSACTIONS = True

@@ -1,10 +1,15 @@
 # apps/astronauts/admin.py
 
+# deviates from standard admin.py layout so that we can incorporate data import/export functionality in admin interface using django-import-export library
+
+from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
 from apps.astronauts.models import Astronaut
 
 
-class AstronautAdmin(admin.ModelAdmin):
+# class AstronautAdmin(admin.ModelAdmin):
+@admin.register(Astronaut)
+class AstronautAdmin(ImportExportModelAdmin):
     list_display = [
         "last_name",
         "first_name",
@@ -15,4 +20,4 @@ class AstronautAdmin(admin.ModelAdmin):
     ]
 
 
-admin.site.register(Astronaut, AstronautAdmin)
+# admin.site.register(Astronaut, AstronautAdmin)
