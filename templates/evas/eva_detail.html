@@ -1,16 +1,16 @@
-<!-- templates/agencies/astronaut_detail.html -->
+<!-- templates/evas/eva_detail.html -->
 
 {% extends 'apis_general/_base_apis_general.html' %}
 {% load static %}
 {% load i18n %}
 
 <!-- Tab title -->
-{% block title %}EVA-{{ eva.seq_code_number|stringformat:"04d" }} | Human Spaceflight API{% endblock title %}
+{% block title %}EVA-{{ eva.code|stringformat:"04d" }} | Human Spaceflight API{% endblock title %}
 <!-- /.Tab title -->
 
-<!-- EVA area content -->
+<!-- Eva area content -->
 {% block apis_general_page_content %}
-	<!-- Section: EVA detail info -->
+	<!-- Section: Eva detail info -->
     <section id="eva-detail-" class="container">
         <h5>{{ eva.code|stringformat:"04d" }}</h5>
         <hr></hr>
@@ -20,12 +20,12 @@
         <p>Date: {{  eva.date }}</p>
         <p>Duration: {{  eva.duration_secs }}</p>
         <p>Tethered/untethered: {{ eva.get_tethered_display }}</p>
-        <p>Panned/unplanned: {{ eva.get_planned_display }}</p>
+        <p>Planned/unplanned: {{ eva.get_planned_display }}</p>
         <p>Notes: {{ eva.notes }}</p>
         <p>Image: {{ eva.image_photo }}</p>
     </section>
     <!--/section-->
-    <!-- /.EVA detail info -->
+    <!-- /.Eva detail info -->
 </main>
 {% endblock apis_general_page_content %}
-<!-- /.EVA area content -->
+<!-- /.Eva area content -->

@@ -24,7 +24,7 @@
             <tbody>
             {% for agency in agency_list %}
                 <tr>
-                    <td><a href="{{ astronaut.get_absolute_url }}">{{ agency.name }}, {{ agency.abbreviation }}</a></td>
+                    <td><a href="{{ agency.get_absolute_url }}">{{ agency.name }}, {{ agency.abbreviation }}</a></td>
                     <td>{{ agency.country }}</td>
                 </tr>
             {% endfor %}

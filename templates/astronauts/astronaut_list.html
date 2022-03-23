@@ -1,4 +1,4 @@
-<!-- templates/agencies/astronaut_list.html -->
+<!-- templates/astronauts/astronaut_list.html -->
 
 {% extends 'apis_general/_base_apis_general.html' %}
 {% load static %}
@@ -28,7 +28,7 @@
                 <tr>
                     <td><a href="{{ astronaut.get_absolute_url }}">{{ astronaut.last_name }}, {{ astronaut.first_name }} {{ astronaut.nick_name }}</a></td>
                     <td>{{ astronaut.nationality }}</td>
-                    <td class="text-right">{{ astronaut.first_time_in_space_date }}</td>
+                    <td class="text-right">{{ astronaut.first_time_in_space_date|date:"d M Y" }}</td>
                     <td class="text-right">{{ astronaut.total_duration_space_secs }}</td>
                 </tr>
             {% endfor %}

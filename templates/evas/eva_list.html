@@ -1,4 +1,4 @@
-<!-- templates/evas/astronaut_list.html -->
+<!-- templates/evas/eva_list.html -->
 
 {% extends 'apis_general/_base_apis_general.html' %}
 {% load static %}
@@ -10,7 +10,7 @@
 
 <!-- Eva area content -->
 {% block apis_general_page_content %}
-	<!-- Section: EVA list -->
+	<!-- Section: Eva list -->
     <section id="eva-list" class="container">
         <h5>List of EVAs</h5>
         <!--hr></hr-->
@@ -27,12 +27,12 @@
             <tbody>
             {% for eva in eva_list %} 
                 <tr>
-                    <!-- Note formatting for apdded zeros -->
+                    <!-- Note formatting for padded zeros -->
                     <td><a href="{{ eva.get_absolute_url }}">EVA-{{ eva.code|stringformat:"04d" }}</a></td>
                     <td>{{ eva.get_full_astronaut_name }}</td>
                     <!-- for type to display correctly instead of <choice abbr. code> need to specify <model_class>.get_<fieldname>_display, see line below -->
                     <td>{{ eva.get_type_display }}</td>
-                    <td class="text-right">{{ eva.date }}</td>
+                    <td class="text-right">{{ eva.date|date:"d M Y" }}</td>
                     <td class="text-right">{{ eva.duration_secs }}</td>
                 </tr>
             {% endfor %}
@@ -40,7 +40,7 @@
         </table>
     </section>
     <!--/section-->
-    <!-- /.EVA list info -->
+    <!-- /.Eva list info -->
 </main>
 {% endblock apis_general_page_content %}
-<!-- /.EVA area content -->
+<!-- /.Eva area content -->
