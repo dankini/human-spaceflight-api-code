@@ -1,0 +1,44 @@
+<!-- templates/missions/mission_list.html -->
+
+{% extends 'apis_general/_base_apis_general.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{% trans 'Missions | Human Spaceflight API' %}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Mission area content -->
+{% block apis_general_page_content %}
+	<!-- Section: Mission list -->
+    <section id="mission-list" class="container">
+        <h5>List of Missions</h5>
+        <!--hr></hr-->
+        <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Mission</th>
+                    <th scope="col">Agency</th>
+                    <th class="text-right" scope="col">Launch Date/Time</th>
+                    <!--th class="text-right" scope="col">Launch Date/Time</th-->
+                    <th class="text-right" scope="col">Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for mission in mission_list %} 
+                <tr>
+                    <td><a href="{{ mission.get_absolute_url }}">{{ mission.name }}</a></td>
+                    <td>{{ mission.agency }}</td>
+                    <td class="text-right">{{ mission.launch_date_time|date:"d M Y / H:i:s" }}</td>
+                    <!--td class="text-right">{{ mission.launch_date_time|date:"c" }}</td-->
+                    <td class="text-right">{{ mission.duration_secs }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <!--/section-->
+    <!-- /.Mission list info -->
+</main>
+{% endblock apis_general_page_content %}
+<!-- /.Mission area content -->

@@ -35,6 +35,8 @@ urlpatterns = [
     path("astronauts/", include("apps.astronauts.urls")),
     # Evas
     path("evas/", include("apps.evas.urls")),
+    # Missions
+    path("missions/", include("apps.missions.urls")),
 ]
 
 if settings.DEBUG:
