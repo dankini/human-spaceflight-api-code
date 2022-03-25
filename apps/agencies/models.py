@@ -18,7 +18,7 @@ class Agency(models.Model):
         verbose_name_plural = "Agencies"
 
     def __str__(self):
-        return self.name
+        return self.abbreviation
 
     def get_absolute_url(self):
         return reverse("agency_detail", args=[str(self.id)])
