@@ -2,9 +2,9 @@
 <svg
    version="1.1"
    id="svg2"
-   height="9.93221mm"
-   width="103.66293mm"
-   sodipodi:docname="humanspaceflightapi-navbarlogotext.svg"
+   height="9.051651mm"
+   width="82.904228mm"
+   sodipodi:docname="humanspaceflight-navbarlogotext.svg"
    inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,15 +29,15 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="2.7524473"
-     inkscape:cx="237.97004"
-     inkscape:cy="-47.594008"
-     inkscape:window-width="1384"
-     inkscape:window-height="730"
+     inkscape:cx="213.62807"
+     inkscape:cy="-50.682169"
+     inkscape:window-width="1436"
+     inkscape:window-height="767"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2"
-     inkscape:showpageshadow="2"
+     inkscape:showpageshadow="0"
      inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs4">
@@ -61,7 +61,8 @@
        y1="19.459644"
        x2="365.50098"
        y2="19.459644"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0.49608933,-2.6210719)" />
   </defs>
   <metadata
      id="metadata7">
@@ -77,12 +78,12 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.6667px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#ffffff;fill-opacity:1;stroke:url(#linearGradient32261);stroke-width:0.999996"
-     x="-2.6367188"
-     y="29.121094"
+     x="-2.1406295"
+     y="26.500021"
      id="text2886"><tspan
        sodipodi:role="line"
        id="tspan2884"
-       x="-2.6367188"
-       y="29.121094"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.6667px;font-family:Roboto;-inkscape-font-specification:Roboto;opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#f9f9f9;stroke-opacity:1">human spaceflight API</tspan></text>
+       x="-2.1406295"
+       y="26.500021"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.6667px;font-family:Roboto;-inkscape-font-specification:Roboto;opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:url(#linearGradient32261);stroke-opacity:1">human spaceflight</tspan></text>
 </svg>
