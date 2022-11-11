@@ -24,9 +24,12 @@ services:
     db:
         # Pin version 14
         image: postgres:14
-        # Dedicated volume for postgres
+        # Dedicated volume for Postgres
         volumes:
             - postgres_data:/var/lib/postgresql/data/
+        # Specify ports to expose in Docker, here Postgres default
+        ports:
+            - 5432:5432
         # Allow connection to db without password, convenience for local dev
         environment:
             - "POSTGRES_HOST_AUTH_METHOD=trust"
