@@ -1,5 +1,6 @@
-<!-- templates/_base.html -->
-<!-- Create _base.html with navbar -->
+<!-- templates/base.html -->
+<!-- Create base.html with navbar -->
+
 {% load static %}
 {% load socialaccount %}
 {% load i18n %}
@@ -54,9 +55,9 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
 			rel="stylesheet"
 		/>
-		<!-- _Base.css CSS -->
+		<!-- base.css CSS -->
 		<link
-			href="{% static 'base/css/_base.css' %}"
+			href="{% static 'base/css/base.css' %}"
 			rel="stylesheet"
 		/>
 		<!-- Local extra CSS -->
@@ -273,7 +274,7 @@
 		</script>
 		<!-- Local base JS -->
 		<script
-		src="{% static 'base/js/_base.js' %}">
+		src="{% static 'base/js/base.js' %}">
 		</script>
 		<!-- Local extra JS -->
 		{% block extra_js %}

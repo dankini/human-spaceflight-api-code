@@ -1,6 +1,6 @@
 <!-- templates/evas/eva_detail.html -->
 
-{% extends 'apis_general/_base_apis_general.html' %}
+{% extends 'base_table.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -9,7 +9,7 @@
 <!-- /.Tab title -->
 
 <!-- Eva area content -->
-{% block apis_general_page_content %}
+{% block table_page_content %}
 	<!-- Section: Eva detail info -->
     <section id="eva-detail-" class="container">
         <h5>{{ eva.code|stringformat:"04d" }}</h5>
@@ -27,5 +27,5 @@
     <!--/section-->
     <!-- /.Eva detail info -->
 </main>
-{% endblock apis_general_page_content %}
+{% endblock table_page_content %}
 <!-- /.Eva area content -->

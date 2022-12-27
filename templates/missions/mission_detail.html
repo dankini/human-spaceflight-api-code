@@ -1,6 +1,6 @@
 <!-- templates/missions/mission_detail.html -->
 
-{% extends 'apis_general/_base_apis_general.html' %}
+{% extends 'base_table.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -9,7 +9,7 @@
 <!-- /.Tab title -->
 
 <!-- Mission area content -->
-{% block apis_general_page_content %}
+{% block table_page_content %}
 	<!-- Section: Mission detail info -->
     <section id="mission-detail-" class="container">
         <h5>{{ mission.name }}</h5>
@@ -27,5 +27,5 @@
     <!--/section-->
     <!-- /.EVA detail info -->
 </main>
-{% endblock apis_general_page_content %}
+{% endblock table_page_content %}
 <!-- /.EVA area content -->

@@ -1,6 +1,7 @@
-<!-- templates/agencies/_base_apis_general.html -->
-<!-- Create _base_apis_general.html for all api related pages -->
-{% extends '_base.html' %}
+<!-- templates/base_table.html -->
+<!-- Create base_table.html for all table related pages -->
+
+{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -13,7 +14,7 @@
 />
 <!-- Local project CSS -->
 <link
-    href="{% static "apis_general/css/_base_apis_general.css" %}"
+    href="{% static "table/css/base_table.css" %}"
     rel="stylesheet"
 />
 {% endblock extra_css %}
@@ -22,11 +23,11 @@
 <!-- Main Page content -->
 {% block page_content %}
 <main>
-    <!-- Section: Agencies page content -->
+    <!-- Section: Main page content -->
     <!-- Background image -->
     <section id="background-img"
         class="view"
-        style="background-image: url('{% static "apis_general/images/apis_general_bkg_img.png" %}');";>
+        style="background-image: url('{% static "table/images/table_bkg_img.png" %}');";>
         <!--img src="{% static 'pages/images/home_banner_1.jpg' %}" class="img-fluid" alt="My image"-->
         <!-- Mask -->
         <div class="mask rgba-black-light">
@@ -40,9 +41,9 @@
                         <div class="card">
                             <div class="card-body text-white z-depth-2 px-4">
                                 <!-- Account area content -->
-                                {% block apis_general_page_content %}  
-                                    <!-- Override this in account-based (allauth) templates to add extra page content -->
-                                {% endblock apis_general_page_content %}
+                                {% block table_page_content %}  
+                                    <!-- Override this in table-based (allauth) templates to add extra page content -->
+                                {% endblock table_page_content %}
                                 <!-- /.Account area content -->
                             </div>
                         </div>
@@ -57,7 +58,7 @@
         <!-- /.Mask -->
     </section>
     <!-- /.Background image -->
-    <!-- /.Section: Account page content -->
+    <!-- /.Section: Main page content -->
 </main>
 
 {% endblock page_content %}
@@ -73,6 +74,6 @@
 </script>
 <!-- Local project JS -->
 <script
-    src="{% static 'apis_general/js/_base_apis_general.js' %}">
+    src="{% static 'table/js/base_table.js' %}">
 </script>
 {% endblock extra_js %}

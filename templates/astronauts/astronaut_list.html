@@ -1,6 +1,6 @@
 <!-- templates/astronauts/astronaut_list.html -->
 
-{% extends 'apis_general/_base_apis_general.html' %}
+{% extends 'base_table.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -9,7 +9,7 @@
 <!-- /.Tab title -->
 
 <!-- Astronaut area content -->
-{% block apis_general_page_content %}
+{% block table_page_content %}
 	<!-- Section: Astronaut list -->
     <section id="astronaut-list" class="container">
         <h5>List of Astronauts/Cosmonauts</h5>
@@ -38,5 +38,5 @@
     <!--/section-->
     <!-- /.Astronaut list info -->
 </main>
-{% endblock apis_general_page_content %}
+{% endblock table_page_content %}
 <!-- /.Astronaut area content -->

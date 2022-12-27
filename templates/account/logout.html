@@ -1,11 +1,11 @@
-{% extends 'account/_base_account.html' %}
+{% extends 'base_account.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block title %}{% trans 'Signout | Human Spaceflight API' %}{% endblock title %}
 
-<!-- Content -->
+<!-- Account area content -->
 {% block account_page_content %}
 	<!-- Card header -->
 	<div class="d-flex align-items-center text-uppercase mb-4">
@@ -26,4 +26,4 @@
 	</form>
 	<!-- /.Form -->
 {% endblock account_page_content %}
-<!-- /.Content -->
+<!-- /.Account area content -->

@@ -1,6 +1,6 @@
 <!-- templates/astronauts/astronaut_detail.html -->
 
-{% extends 'apis_general/_base_apis_general.html' %}
+{% extends 'base_table.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -9,7 +9,7 @@
 <!-- /.Tab title -->
 
 <!-- Astronaut area content -->
-{% block apis_general_page_content %}
+{% block table_page_content %}
 	<!-- Section: Astronaut detail info -->
     <section id="astronaut-detail-" class="container">
         <h5>{{ astronaut.last_name }}, {{ astronaut.first_name }} {{ astronaut.nick_name }}</h5>
@@ -22,5 +22,5 @@
     <!--/section-->
     <!-- /.Astronaut detail info -->
 </main>
-{% endblock apis_general_page_content %}
+{% endblock table_page_content %}
 <!-- /.Astronaut area content -->
