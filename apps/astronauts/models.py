@@ -35,6 +35,7 @@ class Astronaut(models.Model):
     # selection_group = models.ForeignKey(SelectionGroup, on_delete=models.CASCADE)
     # eva_model total_eva =
     # eva_model total_eva_duration_space_secs =
+    # total lunar surface time =
     # award_list = models.ForeignKey(Award, on_delete=models.CASCADE)
     retirement_date = models.DateField(
         auto_now=False, auto_now_add=False, null=True, blank=True
@@ -57,6 +58,11 @@ class Astronaut(models.Model):
 
     class Meta:
         ordering = ["first_time_in_space_date"]
+
+    @property
+    def get_full_astronaut_name(self):
+        'Returns the astronauts full name in format - last_name, first_name "nick_name".'
+        return f"{self.last_name}, {self.first_name} {self.nick_name}"
 
     def __str__(self):
         return self.last_name

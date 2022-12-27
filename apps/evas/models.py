@@ -38,13 +38,14 @@ class Eva(models.Model):
         editable=False,
     )
     code = models.IntegerField()
+    # mission
+    # mission_eva
     astronaut = models.ForeignKey(
         "astronauts.Astronaut",
         on_delete=models.CASCADE,
         related_name="evas",
     )
     date = models.DateField(auto_now=False, auto_now_add=False)
-    # mission =
     type = models.CharField(max_length=2, choices=TYPE_CHOICES)
     duration_secs = models.DurationField()
     tethered = models.CharField(max_length=2, choices=TETHERED_CHOICES, blank=True)
