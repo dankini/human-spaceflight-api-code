@@ -1,5 +1,5 @@
 # Pull base image
-FROM python:3.10.2-slim
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -11,8 +11,8 @@ WORKDIR /code
 
 # Install dependencies
 RUN pip install --upgrade pip
-COPY /config/requirements/requirements.txt /code/
-RUN pip install -r /code/requirements.txt
+COPY /config/requirements/requirements250215.txt /code/
+RUN pip install -r /code/requirements250215.txt
 
 # Copy entire django project directory to /code/
 COPY . /code/
