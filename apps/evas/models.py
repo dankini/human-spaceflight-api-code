@@ -3,6 +3,7 @@
 import uuid
 from django.db import models
 from django.urls import reverse
+from apps.common.models import FullAstronautNameMixin  # Import the FullAstronautNameMixin
 
 # eva type choices drop-down list
 STANDUP = "SU"
@@ -62,13 +63,13 @@ class Eva(models.Model):
     class Meta:
         ordering = ["date"]
 
-    @property
-    def get_full_astronaut_name(self):
-        'Returns the astronauts full name - last, first "nickname".'
-        return f"{self.astronaut.last_name}, {self.astronaut.first_name} {self.astronaut.nick_name}"
+    #@property
+    #def get_full_astronaut_name(self):
+        #"""Get astronaut's full name from the Astronaut model."""
+        #return self.astronaut.get_full_astronaut_name  # Uses mixin from Astronaut
 
     def __str__(self):
-        return self.astronaut.last_name
+        return self.astronaut.get_full_astronaut_name  # Uses mixin from Astronaut to display full astronaut name
 
     def get_absolute_url(self):
         return reverse("eva_detail", args=[str(self.id)])

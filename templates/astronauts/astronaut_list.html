@@ -26,7 +26,7 @@
             <tbody>
             {% for astronaut in astronaut_list %} 
                 <tr>
-                    <td><a href="{{ astronaut.get_absolute_url }}">{{ astronaut.last_name }}, {{ astronaut.first_name }} {{ astronaut.nick_name }}</a></td>
+                    <td><a href="{{ astronaut.get_absolute_url }}">{{ astronaut.get_full_astronaut_name }}</a></td>
                     <td>{{ astronaut.nationality }}</td>
                     <td class="text-right">{{ astronaut.first_time_in_space_date|date:"d M Y" }}</td>
                     <td class="text-right">{{ astronaut.total_duration_space_secs }}</td>
