@@ -11,21 +11,48 @@
 <!-- Mission area content -->
 {% block table_page_content %}
 	<!-- Section: Mission detail info -->
-    <section id="mission-detail-" class="container">
+    <section id="mission-detail" class="container">
         <h5>{{ mission.name }}</h5>
         <hr></hr>
-        <p>Type: {{  mission.type }}</p>
-        <p>Agency: {{  mission.agency }}</p>
-        <p>Duration: {{  mission.duration_secs }}</p>
-        <p>Distance (km): {{ mission.distance_travelled_km }}</p>
-        <p>Distance (nmi): {{ mission.distance_travelled_nmi }}</p>
-        <p>Launch Date/Time: {{ mission.launch_date_time|date:"d M Y / H:i:s" }}</p>
-        <p>Crew Size: {{  mission.crew_size }}</p>
-        <p>Crew Members: {{  mission.crew_members }}</p>
-        <p>Mission Patch: {{ mission.image_mission_patch }}</p>
+        <p>Type: {{ mission.type }}</p>
+        <p>Agency: {{ mission.agency }}</p>
+        <p>Duration: {{ mission.duration_secs }}</p>
+        <p>Distance (km): {{ mission.distance_travelled_km|default:"N/A" }}</p>
+        <p>Distance (nmi): {{ mission.distance_travelled_nmi|default:"N/A" }}</p>
+        <p>Launch Date, Time: {{ mission.launch_date_time|date:"d M Y, H:i:s" }}</p>
+        <p>Crew Size: {{ mission.crew_size }}</p>
+        <table class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Crew Member</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Age at Launch</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for crew in mission.crew_set.all %} 
+                <tr>
+                    <!-- Link to Astronaut Detail Page -->
+                    <td>
+                        <a href="{{ crew.astronaut.get_absolute_url }}" class="text-white">
+                            {{ crew.astronaut.get_full_astronaut_name }}
+                        </a>
+                    </td>
+                    <td>{{ crew.role }}</td>
+                    <td>{{ crew.age_at_launch_ymd }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if mission.image_mission_patch %}
+            <p>Mission Patch:</p>
+            <img src="{{ mission.image_mission_patch.url }}" alt="Mission Patch" style="max-width: 200px;">
+        {% else %}
+            <p><strong>Mission Patch:</strong> No patch available.</p>
+        {% endif %}
     </section>
     <!--/section-->
-    <!-- /.EVA detail info -->
+    <!-- /.Mission detail info -->
 </main>
 {% endblock table_page_content %}
-<!-- /.EVA area content -->
+<!-- /.Mission area content -->

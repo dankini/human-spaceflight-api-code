@@ -1,0 +1,53 @@
+<!-- templates/missions/crew_list.html -->
+
+{% extends 'base_table.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{% trans 'Crew Members | Human Spaceflight API' %}{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Crew area content -->
+{% block table_page_content %}
+	<!-- Section: Crew member list info-->
+    <section id="crew-list" class="container">
+        <h5>List of Crew</h5>
+        <!--hr></hr-->
+        <table id="paginationSimpleNumbers" class="text-white table table-borderless table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Mission</th>
+                    <th scope="col">Crew Member</th>
+                    <th scope="col">Role</th>
+                    <th class="text-right" scope="col">Age at Launch</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for crew_member in crew_list %} 
+                    <tr>
+                        <!-- Link to Mission Detail Page -->
+                        <td><a href="{{ crew_member.mission.get_absolute_url }}">
+                                {{ crew_member.mission.name }}
+                            </a>
+                        </td>
+    
+                        <!-- Link to Astronaut Detail Page -->
+                        <td>
+                            <a href="{{ crew_member.astronaut.get_absolute_url }}">
+                                {{ crew_member.astronaut.get_full_astronaut_name }}
+                            </a>
+                        </td>
+    
+                        <td>{{ crew_member.role }}</td>
+                        <td class="text-right">{{ crew_member.age_at_launch_ymd }}</td> <!-- Fixed age at launch -->
+                    </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </section>
+    <!--/section-->
+    <!-- /.Crew member list info -->
+</main>
+{% endblock table_page_content %}
+<!-- /. area content -->

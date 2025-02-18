@@ -18,6 +18,7 @@ class AstronautAdmin(ImportExportModelAdmin):
         "first_time_in_space_date",
         "total_duration_space_secs",
     ]
+    search_fields = ('first_name', 'last_name')
 
 
 # admin.site.register(Astronaut, AstronautAdmin)

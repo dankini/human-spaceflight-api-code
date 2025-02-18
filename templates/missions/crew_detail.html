@@ -1,0 +1,25 @@
+<!-- templates/missions/mission_detail.html -->
+
+{% extends 'base_table.html' %}
+{% load static %}
+{% load i18n %}
+
+<!-- Tab title -->
+{% block title %}{{ mission.name }} | Human Spaceflight API{% endblock title %}
+<!-- /.Tab title -->
+
+<!-- Crew area content -->
+{% block table_page_content %}
+	<!-- Section: Crew detail info -->
+    <section id="crew-detail-" class="container">
+        <h5>{{ crew.get_full_astronaut_name }}</h5>
+        <hr></hr>
+        <p>Mission: {{  crew.mission }}</p>
+        <p>Role: {{  crew.role }}</p>
+        <p>Mission Age: {{  crew.mission_age }}</p>
+    </section>
+    <!--/section-->
+    <!-- /.Crew detail info -->
+</main>
+{% endblock table_page_content %}
+<!-- /.Crew area content -->
