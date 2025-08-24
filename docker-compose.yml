@@ -33,6 +33,9 @@ services:
         # Allow connection to db without password, convenience for local dev
         environment:
             - "POSTGRES_HOST_AUTH_METHOD=trust"
+            - "POSTGRES_DB=postgres"        # ← Implicit default
+            - "POSTGRES_USER=postgres"      # ← Implicit default  
+            - "POSTGRES_PASSWORD=postgres"  # ← Implicit default
 
 volumes:
     postgres_data:
