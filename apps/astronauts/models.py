@@ -63,7 +63,7 @@ class Astronaut(FullAstronautNameMixin, models.Model):
 
     
     def __str__(self):
-        return self.get_full_astronaut_name  # # Uses mixin from to display full astronaut name
+        return self.get_full_astronaut_name  # Uses mixin class from Common model to display full astronaut name
 
 
     def get_absolute_url(self):

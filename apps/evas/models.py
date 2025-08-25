@@ -63,11 +63,6 @@ class Eva(models.Model):
     class Meta:
         ordering = ["date"]
 
-    #@property
-    #def get_full_astronaut_name(self):
-        #"""Get astronaut's full name from the Astronaut model."""
-        #return self.astronaut.get_full_astronaut_name  # Uses mixin from Astronaut
-
     def __str__(self):
         return self.astronaut.get_full_astronaut_name  # Uses mixin from Astronaut to display full astronaut name
 

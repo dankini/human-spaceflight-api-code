@@ -18,6 +18,3 @@ class EvaAdmin(ImportExportModelAdmin):
         "duration_secs",
         "notes",
     ]
-
-
-# admin.site.register(Eva, EvaAdmin)

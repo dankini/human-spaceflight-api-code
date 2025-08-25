@@ -17,6 +17,3 @@ class AgencytAdmin(ImportExportModelAdmin):
         "formed_date",
         "website",
     ]
-
-
-# admin.site.register(Agency, AgencyAdmin)
