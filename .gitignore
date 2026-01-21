@@ -105,5 +105,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Dependency audit reports (local only)
-DEPENDENCY_AUDIT_REPORT.md
+# Reports and local notes (not tracked)
+*REPORT*.md
+NOTES.md
+TODO.md
