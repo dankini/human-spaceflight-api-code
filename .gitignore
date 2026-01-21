@@ -104,3 +104,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Reports and local notes (not tracked)
+*REPORT*.md
+NOTES.md
+TODO.md
