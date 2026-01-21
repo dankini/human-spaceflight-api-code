@@ -103,4 +103,7 @@ venv.bak/
 /site
 
 # mypy
-.mypy_cache/DEPENDENCY_AUDIT_REPORT.md
+.mypy_cache/
+
+# Dependency audit reports (local only)
+DEPENDENCY_AUDIT_REPORT.md
