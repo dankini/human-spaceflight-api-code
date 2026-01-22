@@ -11,8 +11,8 @@ WORKDIR /code
 
 # Install dependencies
 RUN pip install --upgrade pip
-COPY /config/requirements/requirements250218.txt /code/
-RUN pip install -r /code/requirements250218.txt
+COPY /config/requirements/requirements260121.txt /code/
+RUN pip install -r /code/requirements260121.txt
 
 # Copy entire django project directory to /code/
 COPY . /code/
