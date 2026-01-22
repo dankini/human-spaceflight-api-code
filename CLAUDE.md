@@ -14,6 +14,7 @@ This is the Human Spaceflight API - a Django-based API for tracking human spacef
   - Scopes: `missions`, `astronauts`, `agencies`, `evas`, `accounts`, `common`, `deps`, `docker`, `templates`, `models`, `views`
   - Use imperative mood, no capital, no period
 - **Do not** use empty scope parentheses like `chore():` - either include a scope or omit parentheses entirely
+- **Before committing**: Always ask whether to commit to main or create a branch, and include a recommendation based on the change type
 
 ## Tech Stack
 
